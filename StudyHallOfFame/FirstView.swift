@@ -15,7 +15,7 @@ class FirstView: UIView, UITableViewDelegate{
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemBackground
-        tableView.backgroundColor = .systemGray
+        tableView.backgroundColor = .black
         label.text = "Hall of fame"
         label.textColor = .white
         label.font = .systemFont(ofSize: 36)
@@ -38,7 +38,7 @@ class FirstView: UIView, UITableViewDelegate{
        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
+        100
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

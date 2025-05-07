@@ -22,9 +22,15 @@ class TableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func configureCell(phone: Phone) {
-        self.backgroundColor = .darkGray
+        var backgroundConfiguration = self.defaultBackgroundConfiguration()
+        backgroundConfiguration.backgroundInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+        backgroundConfiguration.backgroundColor = .systemGray
+        backgroundConfiguration.cornerRadius = 10
+        self.backgroundConfiguration = backgroundConfiguration
+     
+        
         self.nameLabel.textColor = .white
-        self.layer.cornerRadius = 20
+        
         self.image.image = phone.image
         self.nameLabel.text = phone.name
         self.phoneDescription = phone.description
@@ -32,16 +38,17 @@ class TableViewCell: UITableViewCell {
     }
     func setupLayout() {
         image.contentMode = .scaleAspectFit
-        image.frame = CGRect(x: 0, y: 0, width: 70 , height: 90)
+        image.frame = CGRect(x: 5, y: 15, width: 70 , height: 70)
+        
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
 //        image.translatesAutoresizingMaskIntoConstraints = false
         addSubview(image)
         addSubview(nameLabel)
         NSLayoutConstraint.activate([
 //            image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            image.topAnchor.constraint(equalTo: contentView.topAnchor),
-            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            
+//            image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+//            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 200),
+          
 //            image.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
 //            image.widthAnchor.constraint(equalToConstant: 50),
 //            image.heightAnchor.constraint(equalTo: contentView.heightAnchor),
@@ -49,9 +56,11 @@ class TableViewCell: UITableViewCell {
            
             
             
-            nameLabel.leadingAnchor.constraint(equalTo: image.trailingAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             
             ])
+        
     }
     
 }

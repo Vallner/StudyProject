@@ -22,6 +22,9 @@ class TableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func configureCell(phone: Phone) {
+        self.backgroundColor = .darkGray
+        self.nameLabel.textColor = .white
+        self.layer.cornerRadius = 20
         self.image.image = phone.image
         self.nameLabel.text = phone.name
         self.phoneDescription = phone.description

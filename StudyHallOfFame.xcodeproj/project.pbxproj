@@ -10,9 +10,22 @@
 		C6B8013E2DC7596600E798FA /* StudyHallOfFame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyHallOfFame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CE6A73A42DCB625600460816 /* Exceptions for "StudyHallOfFame" folder in "StudyHallOfFame" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C6B8013D2DC7596600E798FA /* StudyHallOfFame */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C6B801402DC7596600E798FA /* StudyHallOfFame */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CE6A73A42DCB625600460816 /* Exceptions for "StudyHallOfFame" folder in "StudyHallOfFame" target */,
+			);
 			path = StudyHallOfFame;
 			sourceTree = "<group>";
 		};
@@ -78,7 +91,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					C6B8013D2DC7596600E798FA = {
 						CreatedOnToolsVersion = 16.0;

@@ -14,12 +14,14 @@ class FirstView: UIView, UITableViewDelegate{
     let tableViewDataSource = TableViewDataSource()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        label.text = "Hello, World!"
+        backgroundColor = .systemBackground
+        tableView.backgroundColor = .systemGray
+        label.text = "Hall of fame"
+        label.textColor = .white
         label.font = .systemFont(ofSize: 36)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
-        
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = tableViewDataSource
         tableView.delegate = self
@@ -46,7 +48,9 @@ class FirstView: UIView, UITableViewDelegate{
         let nextVC = DetailedViewController()
         nextVC.configure(with: tableViewDataSource.iphones[indexPath.row])
         delegate!.navigationController?.pushViewController(nextVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+
 //        .addSubview(tableView)
     
     /*

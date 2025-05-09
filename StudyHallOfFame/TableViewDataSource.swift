@@ -8,29 +8,69 @@
 import UIKit
 
 class TableViewDataSource: NSObject,UITableViewDataSource {
-    let iphones:[Phone] = [Phone(name: "Iphone 3G", image: UIImage(named: "Iphone")!, description: "The iPhone 3G is a smartphone developed and marketed by Apple Inc. It is the second generation of iPhone, successor to the original iPhone, and was introduced on June 9, 2008, at the WWDC 2008 which took place at the Moscone Center in San Francisco.The iPhone 3G is internally similar to its predecessor, but included several new hardware features, such as GPS, 3G data and tri-band UMTS/HSDPA. The device was originally loaded with the concurrently launched iPhone OS 2. In addition to other features (including push email and turn-by-turn navigation), this new operating system introduced the App Store—Apple's new distribution platform for third-party applications.Commercially, the iPhone 3G was successful. Its sales numbers were significantly higher than the first generation iPhone and pushed the iPhone's commercial popularity above the company's Mac products.[12] By the end of 2008, the iPhone 3G had become the best-selling cell phone domestically, overtaking the Motorola Razr V3,[13] while Apple also overtook RIM to become the second-largest vendor of smartphones.[14] Its succeeding third-generation iPhone, the iPhone 3GS, was released in June 2009."),
-                           Phone(name: "Iphone 3GS", image: UIImage(named: "iphone 3GS")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 4", image: UIImage(named: "iphone 4")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 4S", image: UIImage(named: "iphone 4")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 5", image: UIImage(named: "iphone 5")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 5C", image: UIImage(named: "iphone 5")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 5S", image: UIImage(named: "iphone 5")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 6", image: UIImage(named: "iphone 6")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 6S", image: UIImage(named: "iphone 6")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 7", image: UIImage(named: "iphone 7")!, description: "The first iPhone was released in 2007"),
-                           Phone(name: "Iphone 7 Plus", image: UIImage(named: "iphone 7")!, description: "The first iPhone was released in 2007")]
+    let iphones:[Phone] = [Phone(name: "Iphone 2G",
+                                 image: UIImage(named: "2g")!,
+                                 description: "9 января 2007 года Стив Джобс представил первый смартфон из модельного ряда iPhone. Предприниматель заявил, что целью Apple было «изобретение телефона заново». С тех пор каждый релиз становится культовым событием, к которому приобщаются миллионы людей во всем мире. Другие компании тоже пытались совместить функции КПК и телефона, но у них не получалось сделать свои гаджеты популярными. Смартфон Apple отличался от них минималистичным дизайном. От клавиатуры отказались, оставив только кнопку Home в нижней части корпуса, — это позволило уместить на компактном устройстве большой экран. Вдобавок дисплей поддерживал управление двумя пальцами (мультитач) и прокрутку страниц, что давало невиданное чувство контроля над изображением.",
+                                 date: "2007"),
+                           Phone(name: "Iphone 3G",
+                                 image: UIImage(named: "3g")!,
+                                 description: "11 июля 2008 года вышла новая версия iPhone. На первый взгляд, изменения были незначительными: все тот же дисплей, кнопка Home и закругленные края корпуса. Но главное было внутри.Новая версия iOS вышла с предустановленным магазином приложений App Store. Пользователи могли не только загружать любые доступные на сервисе программы, но и разрабатывать собственные — для своего времени это было революционным нововведением.Изначально камера с разрешением 2 МП не поддерживала запись видео, но это было исправлено после появления новых приложений. А еще смартфон оправдывал свое название и поддерживал технологию 3G.",
+                                 date: "2008"),
+                           Phone(name: "Iphone 3GS",
+                                 image: UIImage(named: "3gs")!,
+                                 description: "19 июня 2009 года в продажу поступил iPhone 3GS. Буква S в его названии означала speed (с англ. «скорость»). Компания Apple обещала, что он будет вдвое быстрее своего предшественника. Появилась поддержка многозадачности и такая передовая технология, как голосовое управление, — еще не полноценный голосовой помощник, но уже шаг в этом направлении. Благодаря олеофобному покрытию экран больше не пачкался отпечатками пальцев. Для 3-мегапиксельной камеры добавили поддержку автофокуса и цифрового увеличения — уже тогда в компании понимали важность самых передовых технологий съемки.",
+                                 date: "2009"),
+                           Phone(name: "Iphone 4",
+                                 image: UIImage(named: "4")!,
+                                 description: "24 июня 2010 года на прилавках появился iPhone 4. Самое главное отличие — задняя панель перестала быть выпуклой. Став на 3 мм тоньше предшественника, iPhone 4 носил гордое звание самого тонкого смартфона в мире. Все айфоны, какие есть, продолжили развивать эти идеи в дизайне. Рама была сделана из нержавеющей стали, а передняя и задняя панели — из алюмосиликатного стекла. Впервые айфон вышел с процессором собственного производства компании — Apple A4. 5-мегапиксельная камера могла снимать HD-видео и распознавала лица. А еще гаджет обзавелся фронтальным 0,3-мегапиксельным объективом, позволяющим в любой момент сделать селфи. iPhone 4s был представлен 4 октября 2011 года. Это был последний смартфон, выпущенный при жизни Стива Джобса, который скончался на следующей день после презентации. Это привлекло еще больше внимания к анонсу гаджета. Продажи начались 14 октября 2011 года. Важнейшим нововведением стало появление виртуального ассистента Siri. С ее помощью можно было набирать и отправлять сообщения, искать информацию в интернете, включать музыку и так далее. Это сейчас голосовой помощник стал неотъемлемой частью модельного ряда iPhone, а тогда это казалось чем-то на грани фантастики.",
+                                 date: "2010"),
+                           Phone(name: "Iphone 5",
+                                 image: UIImage(named: "5")!,
+                                 description: "12 сентября 2012 года был выпущен долгожданный iPhone 5. Дисплей увеличился, разрешение выросло, цвета стали более насыщенными. По отзывам пользователей, после нового айфона изображение на любом другом смартфоне казалось некачественным. А еще добавились поддержка 4G и фирменный разъем Lightning. Традиция называть любой перспективный смартфон «убийцей айфона» была уже тогда. Но своего ближайшего конкурента iPhone 5 обошел более чем в 2 раза и был продан в количестве 146,2 млн экземпляров.",
+                                 date: "2012"),
+                           Phone(name: "Iphone 5S",
+                                 image: UIImage(named: "5s")!,
+                                 description: "10 сентября 2013 года Apple презентовала первый в мире смартфон с 64-битным чипом. Чип Apple A7 в два раза опережал предыдущую модель и по производительности был наравне со многими настольными процессорами. Необычным решением стала двухцветная светодиодная вспышка, которая освещала сцену холодным и теплым светом одновременно. Впервые был использован сканер отпечатков пальцев Touch ID — очередной пример того, как Apple берут давно известную технологию и делают ее удобной для пользователей. Встроенный в кнопку Home сканер не занимал много места и позволял быстрее подтвердить свою личность в одно касание.",
+                                 date: "2013"),
+                           Phone(name: "Iphone 6",
+                                 image: UIImage(named: "6")!,
+                                 description: "9 сентября 2014 года был выпущен самый популярный смартфон в истории. За первые сутки пользователи приобрели 4 миллиона экземпляров, а всего было продано свыше 220 миллионов айфонов. Новая модель следовала трендам на увеличение размеров телефонов, а также получила изогнутое стекло и закругленные края. Впервые в айфоне был использован фирменный дисплей Retina HD. Базовая версия могла похвастаться 4,7-дюймовым экраном с разрешением 1334×750 пикселей. Камера поддерживала съемку видео в разрешении 1080p и с частотой до 60 кадров в секунду, а также режим slow-mo. Благодаря поддержке интерфейса NFC смартфон можно было использовать для бесконтактной оплаты с помощью Apple Pay. Одновременно с базовой моделью вышел iPhone 6 Plus с 5,5-дюймовым экраном. Ранее Apple стремились к компактности, но тут они вступили на территорию фаблетов — телефонов, которые по размерам находятся где-то между смартфонами и планшетами. Пользователи остались довольны: новинка предлагала разрешение 1920×1080 пикселей с плотностью 401 пиксель на дюйм. Емкость батареи увеличилась под стать такому экрану — до 2915 мА·ч. А еще в камере iPhone 6 Plus впервые в серии появилась оптическая стабилизация изображения.",
+                                 date: "2014"),
+                           Phone(name: "Iphone 6S",
+                                 image: UIImage(named: "6s")!,
+                                 description: "25 сентября 2015 года в продажу поступили iPhone 6S и iPhone 6S Plus. При этом слухи и утечки информации о характеристиках и ключевых особенностях новой модели появились в СМИ еще в мае. С тех пор сливы информации про новые айфоны остаются неотъемлемой частью предрелизной шумихи. Например, пользователи заранее знали про чувствительный к силе нажатия дисплей с поддержкой 3D Touch: достаточно было надавить на иконку одного из фирменных приложений Apple, чтобы запустилось контекстное меню с быстрым доступом к самым полезным функциям. Также заранее было известно о новой 12-мегапиксельной камере с возможностью съемки видео в формате 4К. Благодаря высокому качеству и большому количеству настроек iPhone 6s не уступал многим профессиональным фотоаппаратам. На фронтальной панели была установлена новая 5-мегапиксельная камера. Plus превосходил базовую версию по диагонали экрана и разрешению, а также предлагал аккумулятор с большей емкостью. В обоих вариантах были доступны модели с 16, 32, 64 и 128 ГБ встроенной памяти. 2 ГБ оперативной памяти на тот момент вполне хватало для всех задач.",
+                                 date:"2015"),
+                           Phone(name: "iPhone SE",
+                                 image: UIImage(named: "se")!,
+                                 description: "1 марта стартовали продажи первого iPhone SE (SE — Special Edition, с английского «специальное издание»). Он совместил достоинства двух смартфонов в одном, взяв дизайн от iPhone 5s и высокую производительность от 6s. Это был отличный вариант для тех, кто скучал по прежним компактным айфонам. Как правило, за премиальное качество от компании Apple приходится платить премиальную цену. Но эта модель — пример того, какими айфоны бывают доступными: на старте версия с 16 ГБ встроенной памяти стоила всего $399, а с 64 ГБ — $499. По курсу 2016 года это было 27 293 и 34 133 рубля соответственно. Apple гордо называли iPhone SE самым мощным 4-дюймовым смартфоном из когда-либо существовавших. Он мало весил и легко помещался в руке, несмотря на передовые технологии внутри. Голосовой помощник теперь распознавал музыку и откликался на «Привет, Siri» даже при заблокированном экране.",
+                                 date: "2016"),
+                           Phone(name: "Iphone 7",
+                                 image: UIImage(named: "7")!,
+                                 description: "7 сентября 2016 года Apple презентовала 7-й айфон. На новой модели больше не было 3,5 мм разъема для наушников — вместо него предлагалось использовать разъем Lightning или беспроводную гарнитуру AirPods, анонсированную в тот же день. Зато смартфон получил защиту от пыли и воды на уровне IP67, так что теперь мог пережить погружение на глубину до 1 метра. Поверхность стала менее скользкой, риск уронить айфон уменьшился. Камера на 12 МП размещалась почти вровень с поверхностью задней панели, так что не царапалась и не цеплялась за одежду.",
+                                 date: "2016"),
+//                           Phone(name: "Iphone 7",
+//                                 image: UIImage(named: "iphone 7")!,
+//                                 description: "The first iPhone was released in 2007",
+//                                 date: "2016"),
+//                           Phone(name: "Iphone 7 Plus",
+//                                 image: UIImage(named: "iphone 7")!,
+//                                 description: "The first iPhone was released in 2007",
+//                                 date:"2016")
+                                 ]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return iphones.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let color =  (indexPath.row % 2 == 1) ?  #colorLiteral(red: 0.2051957548, green: 0.465500176, blue: 0.8303315043, alpha: 1) :  #colorLiteral(red: 0.9315242171, green: 0.476580143, blue: 0.7537183166, alpha: 1)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else {
             let newCell = TableViewCell()
-            newCell.configureCell(phone: iphones[indexPath.row])
+            newCell.configureCell(phone: iphones[indexPath.row], color: color)
+            
             return newCell
         }
         print("old cell used")
-        cell.configureCell(phone: iphones[indexPath.row])
+        cell.configureCell(phone: iphones[indexPath.row], color: color)
         return cell
        
         

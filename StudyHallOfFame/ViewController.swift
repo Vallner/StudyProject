@@ -25,7 +25,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-        view.backgroundColor = .black
+        view.backgroundColor =  #colorLiteral(red: 0.2135421932, green: 0.716583252, blue: 0.9282645583, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.layer.cornerRadius = 8
     }
 
 }

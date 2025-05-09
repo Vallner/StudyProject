@@ -9,7 +9,7 @@ import UIKit
 
 class DetailedViewController: UIViewController {
     
-   
+    private lazy var color : UIColor = .systemBlue
     private lazy var imageView:UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,22 +26,32 @@ class DetailedViewController: UIViewController {
         return phoneDescription
     }()
     override func viewDidLoad() {
+        navigationController?.navigationBar.tintColor = .white
+        n
+        view.backgroundColor =  color
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        phoneDescription.isEditable = false
         
-       
+        phoneDescription.backgroundColor = color
+        phoneDescription.isEditable = false
+        phoneDescription.textColor = .white
+        phoneDescription.font = UIFont.systemFont(ofSize: 20)
+        
+        imageView.layer.cornerRadius = 20
+        
+        nameLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        nameLabel.textColor = .white
+        
         view.addSubview(nameLabel)
         view.addSubview(phoneDescription)
         view.addSubview(imageView)
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 //
-            imageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            imageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: -30),
             imageView.bottomAnchor.constraint(equalTo: phoneDescription.topAnchor),
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 400),
+            imageView.widthAnchor.constraint(equalToConstant: 470),
             imageView.heightAnchor.constraint(equalToConstant: 400),
             
            
@@ -52,7 +62,7 @@ class DetailedViewController: UIViewController {
         ])
         // Do any additional setup after loading the view.
     }
-    func configure(with phone: Phone) {
+    func configure(with phone: Phone , color: UIColor) {
         imageView.image = phone.image
         imageView.contentMode = .scaleAspectFit
 //        let targetSize = CGFloat(400)
@@ -61,6 +71,8 @@ class DetailedViewController: UIViewController {
 //        }
 //        imageView.image = scaledImage
         nameLabel.text = phone.name
+        
+        self.color = color
         
         phoneDescription.text = phone.description
         phoneDescription.font = UIFont.systemFont(ofSize: 17)

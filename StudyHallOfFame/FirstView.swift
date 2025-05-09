@@ -14,8 +14,9 @@ class FirstView: UIView, UITableViewDelegate{
     let tableViewDataSource = TableViewDataSource()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemBackground
-        tableView.backgroundColor = .black
+      
+        tableView.backgroundColor =  .white
+        tableView.layer.cornerRadius = 8
         label.text = "Hall of fame"
         label.textColor = .white
         label.font = .systemFont(ofSize: 36)
@@ -33,7 +34,7 @@ class FirstView: UIView, UITableViewDelegate{
             tableView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
        
     }
@@ -46,7 +47,8 @@ class FirstView: UIView, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("pressed")
         let nextVC = DetailedViewController()
-        nextVC.configure(with: tableViewDataSource.iphones[indexPath.row])
+        let backgroundColor: UIColor =  (indexPath.row % 2 == 1) ?  #colorLiteral(red: 0.2051957548, green: 0.465500176, blue: 0.8303315043, alpha: 1) :  #colorLiteral(red: 0.9315242171, green: 0.476580143, blue: 0.7537183166, alpha: 1)
+        nextVC.configure(with: tableViewDataSource.iphones[indexPath.row] , color: backgroundColor)
         delegate!.navigationController?.pushViewController(nextVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }

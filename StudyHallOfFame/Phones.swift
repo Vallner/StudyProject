@@ -9,4 +9,5 @@ struct Phone {
     let name: String
     let image: UIImage
     let description: String
+    let date : String
 }

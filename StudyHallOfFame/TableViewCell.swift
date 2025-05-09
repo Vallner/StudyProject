@@ -9,9 +9,10 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    lazy var nameLabel: UILabel = UILabel()
-   lazy var image: UIImageView = UIImageView()
-   lazy var phoneDescription: String = String()
+    private lazy var nameLabel: UILabel = UILabel()
+    private lazy var image: UIImageView = UIImageView()
+    private lazy var phoneDescription: String = String()
+    private lazy var date: UILabel = UILabel()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
@@ -21,29 +22,38 @@ class TableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configureCell(phone: Phone) {
+    func configureCell(phone: Phone, color: UIColor) {
         var backgroundConfiguration = self.defaultBackgroundConfiguration()
         backgroundConfiguration.backgroundInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
-        backgroundConfiguration.backgroundColor = .systemGray
+        backgroundConfiguration.backgroundColor = color
+        
         backgroundConfiguration.cornerRadius = 10
         self.backgroundConfiguration = backgroundConfiguration
      
         
-        self.nameLabel.textColor = .white
+       
+        self.date.text = phone.date
+        self.date.textColor = .white
+        self.date.font = .systemFont(ofSize: 30)
         
         self.image.image = phone.image
+        
+        self.nameLabel.textColor = .white
         self.nameLabel.text = phone.name
+        
         self.phoneDescription = phone.description
         
     }
     func setupLayout() {
         image.contentMode = .scaleAspectFit
-        image.frame = CGRect(x: 5, y: 15, width: 70 , height: 70)
+        image.frame = CGRect(x: 15, y: -5, width: 120 , height: 110)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        date.translatesAutoresizingMaskIntoConstraints = false
 //        image.translatesAutoresizingMaskIntoConstraints = false
         addSubview(image)
         addSubview(nameLabel)
+        addSubview(date)
         NSLayoutConstraint.activate([
 //            image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 //            image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
@@ -52,12 +62,13 @@ class TableViewCell: UITableViewCell {
 //            image.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
 //            image.widthAnchor.constraint(equalToConstant: 50),
 //            image.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-        
+            date.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            date.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 20),
            
             
             
             nameLabel.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 20),
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: date.bottomAnchor, constant: 10),
             
             ])
         
